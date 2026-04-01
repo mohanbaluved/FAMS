@@ -13,25 +13,25 @@ import documentRoutes from "./server/routes/documents";
 
 dotenv.config();
 
-async function startServer() {
-  const app = express();
-  const PORT = 3000;
+const app = express();
+const PORT = 3000;
 
-  app.use(cors());
-  app.use(express.json());
+app.use(cors());
+app.use(express.json());
 
-  // API Routes
-  app.use("/api/clients", clientRoutes);
-  app.use("/api/tasks", taskRoutes);
-  app.use("/api/dashboard", dashboardRoutes);
-  app.use("/api/documents", documentRoutes);
+// API Routes
+app.use("/api/clients", clientRoutes);
+app.use("/api/tasks", taskRoutes);
+app.use("/api/dashboard", dashboardRoutes);
+app.use("/api/documents", documentRoutes);
 
-  app.get("/api/health", (req, res) => {
-    res.json({ status: "ok", message: "FAMS API is running with Supabase" });
-  });
+app.get("/api/health", (req, res) => {
+  res.json({ status: "ok", message: "FAMS API is running with Supabase" });
+});
 
+async function setupServer() {
   // Vite middleware for development
-  if (process.env.NODE_ENV !== "production") {
+  if (process.env.NODE_ENV !== "production" && !process.env.VERCEL) {
     console.log("Starting Vite in middleware mode...");
     try {
       const vite = await createViteServer({
@@ -43,17 +43,24 @@ async function startServer() {
     } catch (e) {
       console.error("Failed to start Vite:", e);
     }
-  } else {
+  } else if (process.env.NODE_ENV === "production") {
     const distPath = path.join(process.cwd(), "dist");
     app.use(express.static(distPath));
     app.get("*", (req, res) => {
       res.sendFile(path.join(distPath, "index.html"));
     });
   }
+}
 
-  app.listen(PORT, "0.0.0.0", () => {
-    console.log(`Server running on http://localhost:${PORT}`);
+// Only start the server if this file is run directly and NOT on Vercel
+const isVercel = process.env.VERCEL === '1' || !!process.env.VERCEL;
+
+if (!isVercel) {
+  setupServer().then(() => {
+    app.listen(PORT, "0.0.0.0", () => {
+      console.log(`Server running on http://localhost:${PORT}`);
+    });
   });
 }
 
-startServer();
+export default app;
