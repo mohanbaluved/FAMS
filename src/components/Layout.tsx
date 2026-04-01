@@ -13,7 +13,7 @@ import {
   Bell
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/Avatar';
 
 const Layout = () => {
   const { user, profile, logout } = useAuth();
