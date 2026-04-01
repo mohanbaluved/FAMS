@@ -9,7 +9,7 @@ import {
   TableHead, 
   TableHeader, 
   TableRow 
-} from '../components/ui/table';
+} from '@/components/ui/table';
 import { Button } from '../components/ui/button';
 import { Badge } from '../components/ui/badge';
 import { Search, Clock, AlertTriangle, CheckCircle2 } from 'lucide-react';
