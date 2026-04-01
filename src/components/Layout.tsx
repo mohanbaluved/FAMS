@@ -12,8 +12,8 @@ import {
   X,
   Bell
 } from 'lucide-react';
-import { Button } from './ui/button';
-import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
+import { Button } from '@/components/ui/button';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 const Layout = () => {
   const { user, profile, logout } = useAuth();

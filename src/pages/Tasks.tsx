@@ -10,20 +10,20 @@ import {
   TableHeader, 
   TableRow 
 } from '@/components/ui/table';
-import { Button } from '../components/ui/button';
-import { Badge } from '../components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
 import { Search, Clock, AlertTriangle, CheckCircle2 } from 'lucide-react';
-import { Input } from '../components/ui/input';
+import { Input } from '@/components/ui/input';
 import { toast } from 'sonner';
-import { Tabs, TabsList, TabsTrigger } from '../components/ui/tabs';
+import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { 
   Dialog, 
   DialogContent, 
   DialogHeader, 
   DialogTitle, 
   DialogTrigger 
-} from '../components/ui/dialog';
-import { Label } from '../components/ui/label';
+} from '@/components/ui/dialog';
+import { Label } from '@/components/ui/label';
 import { Plus } from 'lucide-react';
 import { 
   Select, 
@@ -31,7 +31,7 @@ import {
   SelectItem, 
   SelectTrigger, 
   SelectValue 
-} from '../components/ui/select';
+} from '@/components/ui/select';
 
 const Tasks = () => {
   const { profile } = useAuth();

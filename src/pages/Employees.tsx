@@ -8,10 +8,10 @@ import {
   TableHeader, 
   TableRow 
 } from '@/components/ui/table';
-import { Button } from '../components/ui/button';
-import { Badge } from '../components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
 import { Search, UserPlus, Shield, User } from 'lucide-react';
-import { Input } from '../components/ui/input';
+import { Input } from '@/components/ui/input';
 import { toast } from 'sonner';
 
 const Employees = () => {
