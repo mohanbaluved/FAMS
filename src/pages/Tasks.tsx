@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import api from '../lib/api';
-import { supabase } from '../lib/supabase';
-import { useAuth } from '../contexts/AuthContext';
+import api from '@/lib/api';
+import { supabase } from '@/lib/supabase';
+import { useAuth } from '@/contexts/AuthContext';
 import { 
   Table, 
   TableBody, 

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Link, useLocation, Outlet } from 'react-router-dom';
-import { useAuth } from '../contexts/AuthContext';
+import { useAuth } from '@/contexts/AuthContext';
 import { 
   LayoutDashboard, 
   Users, 
