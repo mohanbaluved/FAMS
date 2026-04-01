@@ -1,0 +1,5 @@
+{
+  "name": "FAMS - Freelance Agency Management System",
+  "description": "A production-level internal system for managing freelance clients, employees, workflows, documents, and payments.",
+  "requestFramePermissions": []
+}
