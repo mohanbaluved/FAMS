@@ -20,11 +20,11 @@ const Login = () => {
     setIsLoading(true);
 
     try {
-      const response = await api.post('/auth/login', { email, password });
-      login(response.data.token, response.data.user);
+      await login(email, password);
       toast.success('Login successful');
+      navigate('/');
     } catch (error: any) {
-      toast.error(error.response?.data?.message || 'Login failed');
+      toast.error(error.message || 'Login failed');
     } finally {
       setIsLoading(false);
     }

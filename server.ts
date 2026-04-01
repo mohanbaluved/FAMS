@@ -30,12 +30,6 @@ async function startServer() {
     res.json({ status: "ok", message: "FAMS API is running with Supabase" });
   });
 
-  // Check database connection
-  const dbConnected = await checkDbConnection();
-  if (!dbConnected) {
-    console.warn("Warning: Database connection could not be established. Some features may be unavailable.");
-  }
-
   // Vite middleware for development
   if (process.env.NODE_ENV !== "production") {
     console.log("Starting Vite in middleware mode...");

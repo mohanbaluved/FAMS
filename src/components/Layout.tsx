@@ -16,7 +16,7 @@ import { Button } from './ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
 
 const Layout = () => {
-  const { user, logout } = useAuth();
+  const { user, profile, logout } = useAuth();
   const location = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
 
@@ -28,7 +28,7 @@ const Layout = () => {
     { name: 'Payments', path: '/payments', icon: CreditCard },
   ];
 
-  if (user?.role === 'admin') {
+  if (profile?.role === 'admin') {
     navItems.push({ name: 'Employees', path: '/employees', icon: Users });
   }
 
@@ -68,11 +68,11 @@ const Layout = () => {
           <div className="p-4 border-t border-gray-200">
             <div className="flex items-center p-2 mb-4">
               <Avatar className="h-10 w-10">
-                <AvatarFallback>{user?.name.charAt(0)}</AvatarFallback>
+                <AvatarFallback>{profile?.name?.charAt(0) || user?.email?.charAt(0)}</AvatarFallback>
               </Avatar>
               <div className="ml-3 overflow-hidden">
-                <p className="text-sm font-medium text-gray-900 truncate">{user?.name}</p>
-                <p className="text-xs text-gray-500 truncate capitalize">{user?.role}</p>
+                <p className="text-sm font-medium text-gray-900 truncate">{profile?.name || user?.email}</p>
+                <p className="text-xs text-gray-500 truncate capitalize">{profile?.role || 'User'}</p>
               </div>
             </div>
             <Button 
