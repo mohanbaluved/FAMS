@@ -9,21 +9,21 @@ import {
   TableHead, 
   TableHeader, 
   TableRow 
-} from '@/components/ui/table';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
+} from '@/components/ui/Table';
+import { Button } from '@/components/ui/Button';
+import { Badge } from '@/components/ui/Badge';
 import { Search, Clock, AlertTriangle, CheckCircle2 } from 'lucide-react';
-import { Input } from '@/components/ui/input';
+import { Input } from '@/components/ui/Input';
 import { toast } from 'sonner';
-import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Tabs, TabsList, TabsTrigger } from '@/components/ui/Tabs';
 import { 
   Dialog, 
   DialogContent, 
   DialogHeader, 
   DialogTitle, 
   DialogTrigger 
-} from '@/components/ui/dialog';
-import { Label } from '@/components/ui/label';
+} from '@/components/ui/Dialog';
+import { Label } from '@/components/ui/Label';
 import { Plus } from 'lucide-react';
 import { 
   Select, 
@@ -31,7 +31,7 @@ import {
   SelectItem, 
   SelectTrigger, 
   SelectValue 
-} from '@/components/ui/select';
+} from '@/components/ui/Select';
 
 const Tasks = () => {
   const { profile } = useAuth();

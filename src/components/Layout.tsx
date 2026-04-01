@@ -12,7 +12,7 @@ import {
   X,
   Bell
 } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { Button } from '@/components/ui/Button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/Avatar';
 
 const Layout = () => {

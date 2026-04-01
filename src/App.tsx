@@ -9,7 +9,7 @@ import Tasks from '@/pages/Tasks';
 import Employees from '@/pages/Employees';
 import Documents from '@/pages/Documents';
 import Payments from '@/pages/Payments';
-import { Toaster } from '@/components/ui/sonner';
+import { Toaster } from '@/components/ui/Sonner';
 
 const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
   const { user, loading } = useAuth();
